@@ -10,5 +10,5 @@ class TypewiseTest(unittest.TestCase):
     self.assertTrue(typewise_alert.infer_breach(20, 50, 100) == 'TOO_LOW')
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
   unittest.main()
