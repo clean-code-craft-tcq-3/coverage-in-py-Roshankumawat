@@ -8,11 +8,11 @@ def infer_breach(value, lowerLimit, upperLimit):
   return 'NORMAL'
 
 def classify_temperature_breach(coolingType, temperatureInC):
-  #limit = batteryChar[coolingType]
-  #lowerLimit = limit[0]
-  #upperLimit = limit[1]
-  lowerLimit = 0
-  upperLimit = 35
+  limit = batteryChar[coolingType]
+  lowerLimit = limit[0]
+  upperLimit = limit[1]
+  #lowerLimit = 0
+  #upperLimit = 35
   return infer_breach(temperatureInC, lowerLimit, upperLimit)
 
 
