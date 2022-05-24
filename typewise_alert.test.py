@@ -4,6 +4,11 @@ import typewise_alert
 
 class TypewiseTest(unittest.TestCase):
   def test_infers_breach_as_per_limits(self):
+    self.assertTrue(typewise_alert.infer_breach(0,35, 0) == 'Normal')
+    self.assertTrue(typewise_alert.infer_breach(0,35, -1) == 'TOO_LOW')
+    self.assertTrue(typewise_alert.infer_breach(0,35, 30) == 'Normal')
+    self.assertTrue(typewise_alert.infer_breach(0,35, 35) == 'Normal')
+    self.assertTrue(typewise_alert.infer_breach(0,35, 37) == 'TOO_HIGH')
     self.assertFalse(typewise_alert.check_and_alert('TO_EMAIL', 'MED_ACTIVE_COOLING', -1) == 'TOO_LOW')
     self.assertFalse(typewise_alert.check_and_alert('TO_EMAIL', 'MED_ACTIVE_COOLING', 0) == 'TOO_LOW')
     self.assertFalse(typewise_alert.check_and_alert('TO_EMAIL', 'MED_ACTIVE_COOLING', 40) == 'NORMAL')
