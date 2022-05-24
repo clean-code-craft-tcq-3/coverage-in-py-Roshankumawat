@@ -4,7 +4,7 @@ import typewise_alert
 
 class TypewiseTest(unittest.TestCase):
   def test_infers_breach_as_per_limits(self):
-    self.assertFalse(typewise_alert.infer_breach(0,35, 0) == 'Normal')
+    self.assertFalse(typewise_alert.infer_breach(0,0, 35) == 'Normal')
     self.assertTrue(typewise_alert.infer_breach(-1,0, 35) == 'TOO_LOW')
     self.assertTrue(typewise_alert.infer_breach(30, 0,35) == 'Normal')
     self.assertTrue(typewise_alert.infer_breach(35,0,35) == 'Normal')
