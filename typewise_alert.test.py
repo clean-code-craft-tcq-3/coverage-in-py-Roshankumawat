@@ -21,6 +21,9 @@ class TypewiseTest(unittest.TestCase):
     self.assertFalse(typewise_alert.check_and_alert('TO_CONTROLLER', 'PASSIVE_COOLING', 0) == 'TOO_LOW')
     self.assertFalse(typewise_alert.check_and_alert('TO_CONTROLLER', 'PASSIVE_COOLING', 35) == 'TOO_LOW')
     self.assertFalse(typewise_alert.check_and_alert('TO_CONTROLLER', 'PASSIVE_COOLING', 40) == 'TOO_LOW')
+    self.assertTrue(typewise_alert.classify_temperature_breach('MED_ACTIVE_COOLING', 35)=='NORMAL)
+    self.assertTrue(typewise_alert.classify_temperature_breach('PASSIVE_COOLING', 30)=='NORMAL)
+    self.assertTrue(typewise_alert.classify_temperature_breach('HI_ACTIVE_COOLING', 30)=='NORMAL)
     self.assertTrue(typewise_alert.infer_breach(20, 50, 100) == 'TOO_LOW')
 
 
