@@ -9,6 +9,7 @@ class TypewiseTest(unittest.TestCase):
     self.assertTrue(typewise_alert.infer_breach(30, 0,35) == 'NORMAL')
     self.assertTrue(typewise_alert.infer_breach(35,0,35) == 'NORMAL')
     self.assertTrue(typewise_alert.infer_breach(37,0,35) == 'TOO_HIGH')
+    print(typewise_alert.check_and_alert('TO_EMAIL', 'MED_ACTIVE_COOLING', -1) == 'TOO_LOW')
     self.assertTrue(typewise_alert.check_and_alert('TO_EMAIL', 'MED_ACTIVE_COOLING', -1) == 'TOO_LOW')
     self.assertTrue(typewise_alert.check_and_alert('TO_EMAIL', 'MED_ACTIVE_COOLING', 1) == 'NORMAL')
     self.assertTrue(typewise_alert.check_and_alert('TO_EMAIL', 'MED_ACTIVE_COOLING', 45) == 'TOO_HIGH')
