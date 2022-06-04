@@ -10,6 +10,7 @@ class TypewiseTest(unittest.TestCase):
     self.assertTrue(typewise_alert.infer_breach(35,0,35) == 'NORMAL')
     self.assertTrue(typewise_alert.infer_breach(37,0,35) == 'TOO_HIGH')
     print(typewise_alert.send_to_controller('LOO_LOW'))
+    print(typewise_alert.send_to_controller('NORMAL'))
     self.assertTrue(typewise_alert.send_to_controller('LOO_LOW') == '65261, LOO_LOW')
     self.assertTrue(typewise_alert.send_to_controller('NORMAL') == '65,261, NORMAL')
     self.assertTrue(typewise_alert.send_to_controller('TOO_HIGH') == '65,261, TOO_HIGH')
